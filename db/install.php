@@ -1,5 +1,5 @@
-/*
-// This file is part of Moodle - http://moodle.org/
+<?php
+// This file is part of Moodle - https://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -12,22 +12,23 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * format_roc2023_renderer
+ * Code to be executed after the plugin's database scheme has been installed is defined here.
  *
- * @package    format_roc2023
- * @author     Peter Meint Heida
- * @copyright  2025 Peter Meint Heida
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package     format_roc2023
+ * @category    upgrade
+ * @copyright   2025 Peter Meint Heida <info@heidaservices.nl>
+ * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-.format-roc2023-btn {
 
-}
-.activityiconcontainer .activityicon {
-    width: 80px !important;
-    height: 80px !important;
-    max-width: 80px !important;
-    max-height: 80px !important;
+defined('MOODLE_INTERNAL') || die();
+
+/**
+ * Custom code to be run on installing the plugin.
+ */
+function xmldb_format_roc2023_install() {
+
+    return true;
 }

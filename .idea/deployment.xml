@@ -31,10 +31,10 @@
           </mappings>
         </serverdata>
       </paths>
-      <paths name="MBO-flex kopie">
+      <paths name="MBO College ZuidOost">
         <serverdata>
           <mappings>
-            <mapping deploy="/course/format/roc2023" local="$PROJECT_DIR$" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
@@ -49,6 +49,34 @@
         <serverdata>
           <mappings>
             <mapping deploy="/course/format/roc2023" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Template omgeving (project level)">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Zorg &amp; Werk">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Zorg en Werk (Staging)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/course/format/roc2023" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Zorg en Werk Academy">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

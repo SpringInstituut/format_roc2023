@@ -23,9 +23,16 @@ Container to display activity information on the course page such as:
 
 Example context (json):
 {
+"cmid": 123,
 "activityname": "Course announcements",
 "hascompletion": true,
 "uservisible": true,
+"completiondialog": {
+"buttoncontent": "To do",
+"dialogcontent": "You must view this activity to complete it.",
+"buttonclasses": "btn btn-sm btn-outline-secondary dropdown-toggle",
+"classes": "completion-dropdown"
+},
 "isautomatic": true,
 "showmanualcompletion": true,
 "completiondetails": [
@@ -42,31 +49,22 @@ Example context (json):
 }}
 <div data-region="activity-information" data-activityname="{{activityname}}" class="activity-information">
     {{#uservisible}}
-        <div data-region="completion-info">
-            {{#spring_completion}}
-                {{#completiondetails}}
-                    {{$ core_course/completion_automatic }}
-                        {{> format_roc2023/completion }}
-                    {{/ core_course/completion_automatic }}
-                {{/completiondetails}}
-            {{/spring_completion}}
-            {{^spring_completion}}
-                {{! Completion dropdown dialog }}
-                {{#completiondialog}}
-                <div data-region="completionrequirements" aria-label="{{#str}}completionrequirements, core_course, {{activityname}}{{/str}}">
-                    {{> core/local/dropdown/dialog }}
-                </div>
-                {{/completiondialog}}
-
-                {{! Manual completion button }}
-                {{#showmanualcompletion}}
-                    {{#istrackeduser}}
-                        {{$ core_course/completion_manual }}
-                            {{> core_course/completion_manual }}
-                        {{/ core_course/completion_manual }}
-                    {{/istrackeduser}}
-                {{/showmanualcompletion}}
-            {{/spring_completion}}
+    <div data-region="completion-info">
+        {{! Completion dropdown dialog }}
+        {{#completiondialog}}
+        <div data-region="completionrequirements" aria-label="{{#str}}completionrequirements, core_course, {{activityname}}{{/str}}">
+            {{> core/local/dropdown/dialog }}
         </div>
+        {{/completiondialog}}
+
+        {{! Manual completion button }}
+        {{! #showmanualcompletion}}
+            {{! #istrackeduser}}
+                {{! $ core_course/completion_manual }}
+                    {{> core_course/completion_manual }}
+                {{! / core_course/completion_manual }}
+            {{! /istrackeduser}}
+        {{! /showmanualcompletion}}
+    </div>
     {{/uservisible}}
 </div>

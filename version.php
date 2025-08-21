@@ -15,18 +15,18 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * format_roc2023_renderer
+ * format_roc2023
  *
  * @package    format_roc2023
  * @author     Peter Meint Heida
- * @copyright  2024 Peter Meint Heida peter.meint.heida@heidatec.nl
+ * @copyright  2025 Peter Meint Heida info@heidaservices.nl
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'format_roc2023';
+$plugin->release   = '3.01';        // Plugin for LLIDP.
+$plugin->version   = 2025082001;    // The current module version (Date: YYYYMMDDXX)
+$plugin->requires  = 2024100706;    // Requires this Moodle version
 $plugin->maturity = MATURITY_STABLE;
-$plugin->release   = '2.01';        // Plugin for LLIP.
-$plugin->version   = 2024021901;    // The current module version (Date: YYYYMMDDXX)
-$plugin->requires  = 2023100902;    // Requires this Moodle version
