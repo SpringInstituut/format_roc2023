@@ -65,6 +65,15 @@ class content extends content_base
         $format = $this->format;
         $course = $format->get_course();
 
+        if (sizeof($format->get_sections()) == 1) {
+            redirect(new moodle_url('/course/changenumsections.php',
+                [
+                    'courseid' => $course->id,
+                    'insertsection' => 0,
+                    'sesskey' => sesskey(),
+                ]));
+        }
+
         $array_sections = array();
 
         $all_sections = $DB->get_records('course_sections', array('course' => $course->id), "section");
@@ -179,6 +188,7 @@ class content extends content_base
             'bgcolor_selected' => $course->bgcolor_selected,
             'fontcolor_selected' => $course->fontcolor_selected,
             'form_btn' => $form_btn,
+            'sectionreturn' => "null"
         ];
 
         if ($format->show_editor()) {

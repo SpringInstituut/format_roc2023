@@ -19,7 +19,7 @@
  *
  * @package     format_roc2023
  * @category    string
- * @copyright   2023 Jhon Rangel <jrangelardila@gmail.com>
+ * @copyright   2025 Peter Meint Heida <info@heidaservices.nl>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
