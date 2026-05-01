@@ -30,6 +30,7 @@ no settings
 ---
 | ReleaseNr  | File                                         | Function/Linenr           | Short description                                                                 | 
 |------------|----------------------------------------------|---------------------------|-----------------------------------------------------------------------------------|
+| 2026050101 | /classes/.../content/section.mustache        | 106-120                   | Changed handling of icon_exists because it was not working properly.              |
 | 2025122201 | /templates/.../cm.mustache                   | 61                        | Removed line showing old diveder removed in current and higher versions of Moodle |
 |            | /cls/output/courseformat/content.php         | *                         | Updated content corresponding with content of current buttons format file         | 
 | 2025082001 | Complete new version based on format_buttons |                           |                                                                                   |

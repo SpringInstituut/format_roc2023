@@ -26,7 +26,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'format_roc2023';
-$plugin->release   = '3.02';        // Plugin for LLIDP.
-$plugin->version   = 2025122001;    // The current module version (Date: YYYYMMDDXX)
+$plugin->release   = '3.03';        // Plugin for LLIDP.
+$plugin->version   = 2026050101;    // The current module version (Date: YYYYMMDDXX)
 $plugin->requires  = 2024100706;    // Requires this Moodle version
 $plugin->maturity = MATURITY_STABLE;

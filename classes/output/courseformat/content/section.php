@@ -103,17 +103,21 @@ class section extends section_base
                 foreach ($dataitem->cms as $cm_index => &$cmitem) {
                     $tags = get_tags('course_modules', $cmitem->cmitem->id);
                     $files = scandir($CFG->dirroot.'/course/format/roc2023/pix');
+                    $spring_icon_exists = FALSE;
                     foreach ($tags as $tag) {
-                        foreach ($files as $filename) {
-                            if(strpos($filename, $tag->name) !== false) {
-                                $spring_icon_exists = true;
-                                $iconname = $tag->name;
-                                break;
+                        if($spring_icon_exists==FALSE) {
+                            foreach ($files as $filename) {
+                                if (strpos($filename, $tag->name) !== false) {
+                                    $spring_icon_exists = $tag->name;
+                                    break;
+                                }
                             }
+                        } else {
+                            break;
                         }
                     }
                     if ($spring_icon_exists) {
-                        $url = $OUTPUT->image_url($tag->name, 'format_roc2023');
+                        $url = $OUTPUT->image_url($spring_icon_exists, 'format_roc2023');
                         $cmitem->cmitem->cmformat->cmname['activityicon']['purpose'] = 'other';
                         $cmitem->cmitem->cmformat->cmname['activityicon']['icon'] = $url;
                         $cmitem->cmitem->cmformat->cmname['activityicon']['iconclass'] = 'spring-course-icon';
