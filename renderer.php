@@ -606,16 +606,19 @@ class format_roc2023_renderer extends format_topics_renderer
         $tags = get_tags('course_modules', $mod->id);
         $files = scandir($CFG->dirroot.'/course/format/roc2023/pix');
         foreach ($tags as $tag) {
-            foreach ($files as $filename) {
-                if(strpos($filename, $tag->name) !== false) {
-                    $spring_icon_exists = true;
-                    $iconname = $tag->name;
-                    break;
+            if($spring_icon_exists==FALSE) {
+                foreach ($files as $filename) {
+                    if(strpos($filename, $tag->name) !== false) {
+                        $spring_icon_exists = $tag->name;
+                        break;
+                    }
                 }
+            } else {
+                break;
             }
         }
         if ($spring_icon_exists) {
-            $url = $this->output->image_url($tag->name, 'format_roc2023');
+            $url = $this->output->image_url($spring_icon_exists, 'format_roc2023');
             $data->cmname['purpose'] = 'other';
             $data->cmname['icon'] = $url;
         }
